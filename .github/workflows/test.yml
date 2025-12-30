@@ -1,33 +1,20 @@
 name: Test Telegram Notify
 
 on:
-    push:
-    workflow_dispatch:
+  push:
+  workflow_dispatch:
 
 jobs:
-    notify:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v4
-
-            - name: Setup Node
-              uses: actions/setup-node@v4
-              with:
-                  node-version: 20
-                  cache: yarn
-
-            - name: Install deps
-              run: yarn install --frozen-lockfile
-
-            - name: Build action
-              run: yarn build
-
-            - name: Send Telegram
-              uses: ./
-              with:
-                  bot_token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-                  chat_id: ${{ vars.TELEGRAM_CHAT_ID }}
-                  message: |
-                      🚀 *Local test*
-                      Repo: ${{ github.repository }}
-                      Actor: ${{ github.actor }}
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Send Telegram
+        uses: ./
+        with:
+          bot_token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          chat_id: ${{ vars.TELEGRAM_CHAT_ID }}
+          message: |
+            🚀 *Local test*
+            Repo: ${{ github.repository }}
+            Actor: ${{ github.actor }}
