@@ -1,6 +1,6 @@
-name: "Telegram Notify"
+name: "MT Telegram Notify"
 description: "Send Telegram notifications from GitHub Actions"
-author: "MinTin"
+author: "phamtanminhtien"
 
 inputs:
   bot_token:
