@@ -13,7 +13,7 @@ This GitHub Action sends a notification to a Telegram chat.
 ## Example usage
 
 ```yaml
-uses: phamtanminhtien/telegram-notify-action@v1
+uses: phamtanminhtien/telegram-notify-action@v1.0.0
 with:
   bot_token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
   chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
