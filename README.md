@@ -1,4 +1,4 @@
-# MinTin Telegram Notify
+# Telegram Notify
 
 This GitHub Action sends a notification to a Telegram chat.
 
@@ -22,4 +22,4 @@ with:
 
 ## Author
 
-MinTin
+phamtanminhtien
