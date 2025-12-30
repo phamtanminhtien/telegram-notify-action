@@ -1,0 +1,29 @@
+name: "Telegram Notify"
+description: "Send Telegram notifications from GitHub Actions"
+author: "MinTin"
+
+inputs:
+  bot_token:
+    description: "Telegram Bot Token"
+    required: true
+  chat_id:
+    description: "Telegram Chat ID"
+    required: true
+  message_thread_id:
+    description: "Telegram Message Thread ID"
+    required: false
+  message:
+    description: "Message content"
+    required: true
+  parse_mode:
+    description: "Markdown | HTML"
+    required: false
+    default: "Markdown"
+
+runs:
+  using: "node20"
+  main: "dist/index.js"
+
+branding:
+  icon: "send"
+  color: "blue"
